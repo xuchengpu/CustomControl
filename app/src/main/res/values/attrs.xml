@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--name 自定义view的名字-->
+    <declare-styleable name="TextView">
+        <!--name 属性名称 format 格式
+        String 文字 color 颜色
+        dimension 宽高 字体大小
+        integer 数字
+        reference 资源（drawable）
+        -->
+        <!--系统以及定义过的属性都不能再重新定义，需换个名字 如text->mtext-->
+        <attr name="mtext" format="string" />
+        <attr name="mtextcolor" format="color" />
+        <attr name="mtextsize" format="dimension" />
+        <attr name="mmaxlength" format="integer" />
+        <!--父类view有这个属性了，可以不用重新定义-->
+        <!--<attr name="background" format="color|reference"/>-->
+        <!--枚举-->
+        <attr name="inputtype">
+            <enum name="number" value="1" />
+            <enum name="text" value="2" />
+            <enum name="password" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="StepView">
+        <attr name="innercolor" format="color" />
+        <attr name="outcolor" format="color" />
+        <attr name="borderwidth" format="dimension" />
+        <attr name="stepcolor" format="color" />
+        <attr name="stepsize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="DisColorTextView">
+        <attr name="origincolor" format="color" />
+        <attr name="changecolor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CircleProgressBar">
+        <attr name="minnercolor" format="color" />
+        <attr name="moutcolor" format="color" />
+        <attr name="textsize" format="dimension" />
+        <attr name="textcolor" format="color" />
+        <attr name="mborderwith" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="RatingView">
+        <attr name="backgroundbitmap" format="reference" />
+        <attr name="foregroundbitmap" format="reference" />
+        <attr name="count" format="integer" />
+    </declare-styleable>
+</resources>
