@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnSudoku;
     @InjectView(R.id.btn_flowlayout)
     Button btnFlowlayout;
+    @InjectView(R.id.btn_touch)
+    Button btnTouch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_flowlayout,R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
+    @OnClick({R.id.btn_touch,R.id.btn_flowlayout, R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -67,12 +69,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_flowlayout:
                 intent = new Intent(this, FlowlayoutActivity.class);
                 break;
+            case R.id.btn_touch:
+                intent = new Intent(this, TouchActivity.class);
+                break;
         }
         if (intent != null) {
             startActivity(intent);
         }
 
     }
-
 
 }

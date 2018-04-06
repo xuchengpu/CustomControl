@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.xuchengpu.customcontrol.R;
+import com.xuchengpu.customcontrol.adapter.FlowlayoutAdapter;
 import com.xuchengpu.customcontrol.wiget.Flowlayout;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.xuchengpu.customcontrol.activitys;
+package com.xuchengpu.customcontrol.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;

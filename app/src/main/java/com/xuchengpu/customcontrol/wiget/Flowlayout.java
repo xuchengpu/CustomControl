@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.xuchengpu.customcontrol.activitys.FlowlayoutAdapter;
+import com.xuchengpu.customcontrol.adapter.FlowlayoutAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
