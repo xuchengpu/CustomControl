@@ -24,7 +24,8 @@
         <activity android:name=".activitys.IndexActivity" />
         <activity android:name=".activitys.SudokuActivity" />
         <activity android:name=".activitys.FlowlayoutActivity" />
-        <activity android:name=".activitys.TouchActivity"></activity>
+        <activity android:name=".activitys.TouchActivity" />
+        <activity android:name=".activitys.KuGouActivity"></activity>
     </application>
 
 </manifest>

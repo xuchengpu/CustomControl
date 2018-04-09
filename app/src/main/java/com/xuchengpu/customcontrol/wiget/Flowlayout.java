@@ -41,7 +41,6 @@ public class Flowlayout extends ViewGroup {
         int height = 0;
         int maxHeight = 0;
 
-
         List<View> lineViews = new ArrayList<>();//用来装每行的子view的集合
         groups.clear();//因为onmeasure方法不止调用一次
         groups.add(lineViews);//第一行先添加进来

@@ -4,10 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.xuchengpu.customcontrol.activitys.TouchActivity">
-<com.xuchengpu.customcontrol.wiget.TouchView
-    android:id="@+id/touchview"
-    android:layout_width="200dp"
-    android:background="@color/colorAccent"
-    android:layout_height="200dp"/>
+
+    <com.xuchengpu.customcontrol.wiget.TouchViewGroup
+        android:id="@+id/touchviewgroup"
+        android:layout_width="300dp"
+        android:layout_height="300dp">
+
+        <com.xuchengpu.customcontrol.wiget.TouchView
+            android:id="@+id/touchview_in_viewgroup"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/colorAccent" />
+    </com.xuchengpu.customcontrol.wiget.TouchViewGroup>
+
+    <com.xuchengpu.customcontrol.wiget.TouchView
+        android:id="@+id/touchview"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@color/colorAccent" />
 </LinearLayout>
