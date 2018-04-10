@@ -25,7 +25,8 @@
         <activity android:name=".activitys.SudokuActivity" />
         <activity android:name=".activitys.FlowlayoutActivity" />
         <activity android:name=".activitys.TouchActivity" />
-        <activity android:name=".activitys.KuGouActivity"></activity>
+        <activity android:name=".activitys.KuGouActivity" />
+        <activity android:name=".activitys.ViewDragHelperActivity"></activity>
     </application>
 
 </manifest>
