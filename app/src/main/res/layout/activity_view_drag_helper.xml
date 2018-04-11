@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.xuchengpu.customcontrol.wiget.DragHelperView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.xuchengpu.customcontrol.activitys.ViewDragHelperActivity">
-    <com.xuchengpu.customcontrol.wiget.TouchView
-        android:id="@+id/tv1"
+    <TextView
+        android:background="@color/colorAccent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <com.xuchengpu.customcontrol.wiget.TouchView
-        android:id="@+id/tv2"
+        android:layout_height="200dp" />
+    <ListView
+        android:id="@+id/listview"
+        android:background="#9b4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <com.xuchengpu.customcontrol.wiget.TouchView
-        android:id="@+id/tv3"
+        android:layout_height="match_parent"/>
+    <!--<TextView
+        android:background="#9b4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</RelativeLayout>
+        android:layout_height="200dp" />-->
+</com.xuchengpu.customcontrol.wiget.DragHelperView>

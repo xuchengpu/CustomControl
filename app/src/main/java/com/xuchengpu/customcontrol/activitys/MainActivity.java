@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnKugou;
     @InjectView(R.id.btn_draghelper)
     Button btnDraghelper;
+    @InjectView(R.id.btn_status)
+    Button btnStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_draghelper,R.id.btn_kugou, R.id.btn_touch, R.id.btn_flowlayout, R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
+    @OnClick({R.id.btn_status,R.id.btn_draghelper, R.id.btn_kugou, R.id.btn_touch, R.id.btn_flowlayout, R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -81,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_draghelper:
                 intent = new Intent(this, ViewDragHelperActivity.class);
+                break;
+            case R.id.btn_status:
+                intent = new Intent(this, StatusBarActivity.class);
                 break;
         }
         if (intent != null) {

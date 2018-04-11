@@ -2,33 +2,68 @@ package com.xuchengpu.customcontrol.activitys;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.xuchengpu.customcontrol.R;
-import com.xuchengpu.customcontrol.wiget.TouchView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class ViewDragHelperActivity extends AppCompatActivity {
 
-    @InjectView(R.id.tv1)
-    TouchView  tv1;
-    @InjectView(R.id.tv2)
-    TouchView  tv2;
-    @InjectView(R.id.tv3)
-    TouchView  tv3;
+    @InjectView(R.id.listview)
+    ListView listview;
+    private List<String> datas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_drag_helper);
         ButterKnife.inject(this);
-        tv3.setOnClickListener(new View.OnClickListener() {
+
+        for (int i = 0; i < 30; i++) {
+            datas.add("item-->" + i);
+        }
+        listview.setAdapter(new BaseAdapter() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(ViewDragHelperActivity.this, "tv3", Toast.LENGTH_SHORT).show();
+            public int getCount() {
+                return datas.size();
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return null;
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return 0;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                MyViewHolder holder;
+                if (convertView == null) {
+                    convertView = LayoutInflater.from(ViewDragHelperActivity.this).inflate(R.layout.item_lv, parent, false);
+                    holder=new MyViewHolder();
+                    holder.tv= (TextView) convertView;
+                    convertView.setTag(holder);
+                }else{
+                    holder= (MyViewHolder) convertView.getTag();
+                }
+                holder.tv.setText(datas.get(position));
+                return convertView;
+            }
+            class MyViewHolder {
+                TextView tv;
             }
         });
 
