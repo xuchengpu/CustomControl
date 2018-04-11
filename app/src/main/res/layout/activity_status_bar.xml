@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xuchengpu.customcontrol.activitys.StatusBarActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Hello World!"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="改变状态栏颜色"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_below="@id/btn_change"
+        android:id="@+id/btn_immersion"
+        android:layout_width="200dp"
+        android:layout_margin="40dp"
+        android:layout_height="wrap_content"
+        android:text="设置为沉浸式状态栏"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+</RelativeLayout>
