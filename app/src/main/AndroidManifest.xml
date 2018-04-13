@@ -27,7 +27,11 @@
         <activity android:name=".activitys.TouchActivity" />
         <activity android:name=".activitys.KuGouActivity" />
         <activity android:name=".activitys.ViewDragHelperActivity" />
-        <activity android:name=".activitys.StatusBarActivity"
+        <activity
+            android:name=".activitys.StatusBarActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activitys.BehaviorActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

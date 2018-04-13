@@ -3,4 +3,25 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--common-->
+    <color name="VCheck_yellow">#ff9933</color>
+    <color name="VCheck_blue">#3399ff</color>
+    <color name="VCheck_green">#6ddcc0</color>
+    <color name="light_blue">#0099ff</color>
+    <color name="present_80_blue">#803399ff</color>
+    <color name="present_20_green">#2033cc99</color>
+    <color name="present_80_yellow">#80ff9933</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff3333</color>
+    <color name="deep_red">#ff3333</color>
+    <color name="light_black">#333333</color>
+    <color name="edt_hint_gray">#999999</color>
+    <color name="gray">#666666</color>
+    <color name="vip_gray">#e0dede</color>
+    <color name="persent60_gray">#60666666</color>
+    <color name="persent40_gray">#40666666</color>
+    <color name="persent20_gray">#20666666</color>
+    <color name="persent10_gray">#10666666</color>
+    <color name="white">#ffffff</color>
 </resources>

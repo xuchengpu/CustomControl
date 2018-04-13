@@ -24,6 +24,7 @@ public class StatusBarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status_bar);
         ButterKnife.inject(this);
+
 //        StatusBarUtils.setStatusBarColor(this, Color.GREEN);// 以后使用时注意：此处有bug,只能在oncreate方法里面调用，在onclick里面调用会出问题
         StatusBarUtils.setStatusBarTranslucent(this);//以后使用时注意：此处有bug,只能在oncreate方法里面调用，在onclick里面调用会出问题
     }
