@@ -17,8 +17,8 @@ import android.view.View;
 
 public class RecycleViewDecoration extends RecyclerView.ItemDecoration {
 
-    private final Style style;
-    private final Drawable drawable;
+    private  Style style;
+    private  Drawable drawable;
 
     /**
      * @param context 上下文
@@ -45,23 +45,28 @@ public class RecycleViewDecoration extends RecyclerView.ItemDecoration {
                 outRect.top = drawable.getIntrinsicHeight();
             }
         } else if (style == Style.GRIDLAYOUT_DECORATION) {
-            int spanCount = ((GridLayoutManager) parent.getLayoutManager()).getSpanCount();
-            if ((position+1) % spanCount == 0) {//屏蔽掉最右边的item的竖线
-                outRect.bottom = drawable.getIntrinsicHeight();
-            } else {
-                outRect.right = drawable.getIntrinsicHeight();
-                outRect.bottom = drawable.getIntrinsicHeight();
+            RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
+            if(layoutManager instanceof GridLayoutManager) {
+                int spanCount = ((GridLayoutManager) layoutManager).getSpanCount();
+                if ((position+1) % spanCount == 0) {//屏蔽掉最右边的item的竖线
+                    outRect.bottom = drawable.getIntrinsicHeight();
+                } else {
+                    outRect.right = drawable.getIntrinsicHeight();
+                    outRect.bottom = drawable.getIntrinsicHeight();
+                }
             }
-
         }
-
     }
 
     @Override
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         super.onDraw(c, parent, state);
         int count = parent.getChildCount();
-        int spanCount = ((GridLayoutManager) parent.getLayoutManager()).getSpanCount();
+        RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
+        int spanCount=1;
+        if(layoutManager instanceof GridLayoutManager) {
+            spanCount = ((GridLayoutManager) parent.getLayoutManager()).getSpanCount();
+        }
         if (style == Style.LINEARLAYOUT_DECORATION) {
             for (int i = 1; i < count; i++) {//跳过第0个从第一个顶部开始
                 View child = parent.getChildAt(i);

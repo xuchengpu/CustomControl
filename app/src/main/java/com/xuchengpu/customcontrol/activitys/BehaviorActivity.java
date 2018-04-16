@@ -16,7 +16,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.xuchengpu.customcontrol.R;
-import com.xuchengpu.customcontrol.adapter.FruitRecycleViewAdapter;
+import com.xuchengpu.customcontrol.adapter.BaseAdapter;
+import com.xuchengpu.customcontrol.adapter.FruitAdapter;
 import com.xuchengpu.customcontrol.bean.Fruit;
 import com.xuchengpu.customcontrol.utils.RecycleViewDecoration;
 
@@ -35,7 +36,8 @@ public class BehaviorActivity extends AppCompatActivity {
             new Fruit("Pineapple", R.drawable.pineapple), new Fruit("Strawberry", R.drawable.strawberry),
             new Fruit("Cherry", R.drawable.cherry), new Fruit("Mango", R.drawable.mango)};
     private List<Fruit> fruitList = new ArrayList<>();
-    private FruitRecycleViewAdapter adapter;
+    //    private FruitRecycleViewAdapter adapter;
+    private FruitAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +70,26 @@ public class BehaviorActivity extends AppCompatActivity {
         });
         //设置中间recycleview的内容
         initFruits();
-        adapter = new FruitRecycleViewAdapter(fruitList);
+//        adapter = new FruitRecycleViewAdapter(fruitList);
+        adapter = new FruitAdapter(this, fruitList, R.layout.item_fruit);
         recyclerView.setAdapter(adapter);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new RecycleViewDecoration(this, RecycleViewDecoration.Style.GRIDLAYOUT_DECORATION,R.drawable.item_decoration));
+        recyclerView.addItemDecoration(new RecycleViewDecoration(this, RecycleViewDecoration.Style.GRIDLAYOUT_DECORATION, R.drawable.item_decoration));
+        adapter.setOnItemClickListener(new BaseAdapter.ItemClickListener() {
+            @Override
+            public void onClick(int positon) {
+                Toast.makeText(BehaviorActivity.this, "单击了" + positon, Toast.LENGTH_SHORT).show();
+            }
+        });
+        adapter.setOnItemLongClickListener(new BaseAdapter.ItemLongClickListener() {
+            @Override
+            public boolean onClick(int positon) {
+                Toast.makeText(BehaviorActivity.this, "长按了"+positon, Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+
 
         //SwipeRefreshLayout的使用
         refresh.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
@@ -143,12 +160,12 @@ public class BehaviorActivity extends AppCompatActivity {
             case android.R.id.home:
                 break;
             case R.id.backup:
+                recyclerView.addItemDecoration(new RecycleViewDecoration(this, RecycleViewDecoration.Style.GRIDLAYOUT_DECORATION, R.drawable.item_decoration));
                 recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
-                recyclerView.addItemDecoration(new RecycleViewDecoration(this, RecycleViewDecoration.Style.GRIDLAYOUT_DECORATION,R.drawable.item_decoration));
                 break;
             case R.id.delete:
+                recyclerView.addItemDecoration(new RecycleViewDecoration(this, RecycleViewDecoration.Style.LINEARLAYOUT_DECORATION, R.drawable.item_decoration));
                 recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                recyclerView.addItemDecoration(new RecycleViewDecoration(this, RecycleViewDecoration.Style.LINEARLAYOUT_DECORATION,R.drawable.item_decoration));
                 break;
             case R.id.setting:
                 Toast.makeText(BehaviorActivity.this, "点击了设置", Toast.LENGTH_SHORT).show();
