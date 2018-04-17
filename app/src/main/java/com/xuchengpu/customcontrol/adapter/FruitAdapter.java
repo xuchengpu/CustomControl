@@ -31,6 +31,7 @@ public class FruitAdapter extends BaseAdapter<Fruit> {
                 }else{
                     return R.layout.item_fruit2;
                 }
+
             }
         });
     }

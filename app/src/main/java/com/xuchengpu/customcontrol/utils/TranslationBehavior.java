@@ -1,12 +1,10 @@
 package com.xuchengpu.customcontrol.utils;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.xuchengpu.customcontrol.R;
@@ -35,15 +33,16 @@ public class TranslationBehavior extends FloatingActionButton.Behavior {
      * @param child             和Behavior 绑定的View
      * @param directTargetChild
      * @param target
-     * @param axes              嵌套滑动 应用的滑动方向，看 {@link ViewCompat#SCROLL_AXIS_HORIZONTAL},
+     * @param nestedScrollAxes              嵌套滑动 应用的滑动方向，看 {@link ViewCompat#SCROLL_AXIS_HORIZONTAL},
      *                          {@link ViewCompat#SCROLL_AXIS_VERTICAL}
      * @return
      */
     @Override
-    public boolean onStartNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull FloatingActionButton child, @NonNull View directTargetChild, @NonNull View target, int axes, int type) {
+    public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child, View directTargetChild, View target, int nestedScrollAxes) {
         // nestedScrollAxes 滑动关联的轴，我们只关心垂直的滑动
-        return axes == ViewCompat.SCROLL_AXIS_VERTICAL;
+        return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL;
     }
+
 
     /**
      * 进行嵌套滚动时被调用
@@ -55,13 +54,12 @@ public class TranslationBehavior extends FloatingActionButton.Behavior {
      * @param dyConsumed
      * @param dxUnconsumed      x 方向剩下的滚动距离
      * @param dyUnconsumed
-     * @param type
      */
     @Override
-    public void onNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull FloatingActionButton child, @NonNull View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int type) {
-        super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type);
+    public void onNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child, View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
+        super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed);
         //根据滑动的方向指向动画
-        Log.e("TAG", "dyConsumed==" + dyConsumed);
+//        Log.e("TAG", "dyConsumed==" + dyConsumed);
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) child.getLayoutParams();
         if (dyConsumed > 0) {
             //手指往上滑动
@@ -91,4 +89,5 @@ public class TranslationBehavior extends FloatingActionButton.Behavior {
         tabLayout = parent.findViewById(R.id.bottom_tab_layout);
         return super.onLayoutChild(parent, child, layoutDirection);
     }
+
 }

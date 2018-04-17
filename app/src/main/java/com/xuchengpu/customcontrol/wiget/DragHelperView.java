@@ -3,13 +3,13 @@ package com.xuchengpu.customcontrol.wiget;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.ListViewCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.FrameLayout;
-import android.widget.ListView;
 
 /**
  * Created by 许成谱 on 2018/4/10 18:21.
@@ -142,15 +142,25 @@ public class DragHelperView extends FrameLayout {
         }
     }
 
+
+    //从SwipeRefreshLayout中扒取而来，学会利用系统以后的方法工具,判断listview时候滑到顶
     /**
      * @return Whether it is possible for the child view of this layout to
      *         scroll up. Override this if the child view is a custom view.
      */
-    //从SwipeRefreshLayout中扒取而来，学会利用系统以后的方法工具,判断listview时候滑到顶
     public boolean canChildScrollUp(View view) {
-        if (view instanceof ListView) {
-            return ListViewCompat.canScrollList((ListView) view, -1);
+
+        if (android.os.Build.VERSION.SDK_INT < 14) {
+            if (view instanceof AbsListView) {
+                final AbsListView absListView = (AbsListView) view;
+                return absListView.getChildCount() > 0
+                        && (absListView.getFirstVisiblePosition() > 0 || absListView.getChildAt(0)
+                        .getTop() < absListView.getPaddingTop());
+            } else {
+                return ViewCompat.canScrollVertically(view, -1) || view.getScrollY() > 0;
+            }
+        } else {
+            return ViewCompat.canScrollVertically(view, -1);
         }
-        return view.canScrollVertically(-1);
     }
 }

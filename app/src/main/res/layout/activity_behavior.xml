@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <android.support.v7.widget.RecyclerView
+            <com.xuchengpu.customcontrol.wiget.MyRecycleview
                 android:id="@+id/recycleview"
                 android:background="@color/colorPrimary"
                 android:layout_width="match_parent"
@@ -47,7 +47,6 @@
             app:layout_behavior="com.xuchengpu.customcontrol.utils.TranslationBehavior"
             android:src="@drawable/ic_done"
             app:borderWidth="0dp" />
-
 
     <LinearLayout
         android:id="@+id/bottom_tab_layout"
@@ -83,5 +82,6 @@
             android:src="@drawable/healthstewardblue"
             android:layout_weight="1" />
     </LinearLayout>
+
 
     </android.support.design.widget.CoordinatorLayout>
