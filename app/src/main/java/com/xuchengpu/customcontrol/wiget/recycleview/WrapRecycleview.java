@@ -1,4 +1,4 @@
-package com.xuchengpu.customcontrol.wiget;
+package com.xuchengpu.customcontrol.wiget.recycleview;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -6,27 +6,25 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.xuchengpu.customcontrol.adapter.WrapRecycleViewAdapter;
-
 /**
  * Created by 许成谱 on 2018/4/17 14:34.
  * qq:1550540124
  * 热爱生活每一天！
  */
 
-public class MyRecycleview extends RecyclerView {
+public class WrapRecycleview extends RecyclerView {
     private WrapRecycleViewAdapter mAdapter;
     private AdapterDataObserver observer;
 
-    public MyRecycleview(Context context) {
+    public WrapRecycleview(Context context) {
         this(context, null);
     }
 
-    public MyRecycleview(Context context, @Nullable AttributeSet attrs) {
+    public WrapRecycleview(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public MyRecycleview(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public WrapRecycleview(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         observer=new AdapterDataObserver() {
             @Override

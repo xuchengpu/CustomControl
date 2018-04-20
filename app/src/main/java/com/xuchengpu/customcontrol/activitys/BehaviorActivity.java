@@ -17,10 +17,10 @@ import android.widget.Toast;
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.adapter.BaseAdapter;
 import com.xuchengpu.customcontrol.adapter.FruitAdapter;
-import com.xuchengpu.customcontrol.adapter.WrapRecycleViewAdapter;
+import com.xuchengpu.customcontrol.wiget.recycleview.WrapRecycleViewAdapter;
 import com.xuchengpu.customcontrol.bean.Fruit;
 import com.xuchengpu.customcontrol.utils.RecycleViewDecoration;
-import com.xuchengpu.customcontrol.wiget.MyRecycleview;
+import com.xuchengpu.customcontrol.wiget.recycleview.WrapRecycleview;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ import java.util.Random;
 public class BehaviorActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private FloatingActionButton fab;
-    private MyRecycleview  recyclerView;
+    private WrapRecycleview recyclerView;
     private SwipeRefreshLayout refresh;
     private Fruit[] fruits = {new Fruit("Apple", R.drawable.apple), new Fruit("Banana", R.drawable.banana),
             new Fruit("Orange", R.drawable.orange), new Fruit("Watermelon", R.drawable.watermelon),
@@ -47,7 +47,7 @@ public class BehaviorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_behavior);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         fab = (FloatingActionButton) findViewById(R.id.fab);
-        recyclerView = (MyRecycleview ) findViewById(R.id.recycleview);
+        recyclerView = (WrapRecycleview) findViewById(R.id.recycleview);
         refresh = (SwipeRefreshLayout) findViewById(R.id.refresh);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();

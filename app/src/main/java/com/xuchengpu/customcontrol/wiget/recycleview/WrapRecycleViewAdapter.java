@@ -1,5 +1,6 @@
-package com.xuchengpu.customcontrol.adapter;
+package com.xuchengpu.customcontrol.wiget.recycleview;
 
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
@@ -20,8 +21,8 @@ public class WrapRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     private int headIndex;
     private int footIndex;
-    private final int headIndexMark=2000000;//用一个较大的数来区别头部、底部、内容
-    private final int footIndexMark=1000000;
+    private final int headIndexMark = 2000000;//用一个较大的数来区别头部、底部、内容
+    private final int footIndexMark = 1000000;
 
     public WrapRecycleViewAdapter(RecyclerView.Adapter adapter) {
         this.mAdapter = adapter;
@@ -31,6 +32,33 @@ public class WrapRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         footIndex = footIndexMark;
     }
 
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
+        if (manager instanceof GridLayoutManager) {
+            GridLayoutManager layoutManager = (GridLayoutManager) manager;
+            final int spanCount = layoutManager.getSpanCount();
+            layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+                    if (headViews.size() != 0) {
+                        if (position == 0) {
+                            return spanCount;
+                        }
+                    }
+                    if (footViews.size() != 0) {
+                        if (position == getItemCount() - 1) {
+                            return spanCount;
+                        }
+                    }
+
+                    return 1;
+                }
+            });
+        }
+
+    }
 
     @Override
     public int getItemViewType(int position) {
@@ -51,9 +79,9 @@ public class WrapRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (headViews.get(viewType) !=null ) {//通过key值拿到value
+        if (headViews.get(viewType) != null) {//通过key值拿到value
             return createHeadViewHolder(viewType);
-        }else  if (footViews.get(viewType) !=null) {
+        } else if (footViews.get(viewType) != null) {
             return createFootViewHolder(viewType);
         }
 
@@ -61,12 +89,14 @@ public class WrapRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     }
 
     private RecyclerView.ViewHolder createFootViewHolder(int viewType) {
-        return new RecyclerView.ViewHolder(footViews.get(viewType)){};
+        return new RecyclerView.ViewHolder(footViews.get(viewType)) {
+        };
     }
 
     private RecyclerView.ViewHolder createHeadViewHolder(int viewType) {
 
-        return new RecyclerView.ViewHolder(headViews.get(viewType)){};
+        return new RecyclerView.ViewHolder(headViews.get(viewType)) {
+        };
     }
 
 
@@ -79,7 +109,7 @@ public class WrapRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             int adjPosition = position - numHeaders;
             int adapterCount = mAdapter.getItemCount();
             if (adjPosition < adapterCount) {
-              mAdapter.onBindViewHolder(holder,adjPosition);
+                mAdapter.onBindViewHolder(holder, adjPosition);
             }
         }
 
@@ -135,13 +165,14 @@ public class WrapRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
      * @param view
      */
     public void removeFootView(View view) {
-        int indexOfValue = headViews.indexOfValue(view);
+        int indexOfValue = footViews.indexOfValue(view);
         if (indexOfValue != -1) {
             footViews.removeAt(indexOfValue);
             notifyDataSetChanged();
         }
     }
-    public int getHeadViewCount(){
+
+    public int getHeadViewCount() {
         return headViews.size();
     }
 }
