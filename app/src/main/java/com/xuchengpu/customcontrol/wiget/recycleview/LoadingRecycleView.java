@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -157,6 +158,10 @@ public class LoadingRecycleView extends RefreshRecycleView {
 
 
         return super.dispatchTouchEvent(ev);
+    }
+
+    private float dp2px(int i) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,i,getResources().getDisplayMetrics());
     }
 
     /**

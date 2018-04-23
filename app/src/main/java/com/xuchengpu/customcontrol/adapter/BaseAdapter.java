@@ -16,7 +16,7 @@ import java.util.List;
  * 热爱生活每一天！
  * recycleview的万能适配器
  *
- * @param <T>
+ * @param <T> 传入的数据类型
  */
 
 public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {

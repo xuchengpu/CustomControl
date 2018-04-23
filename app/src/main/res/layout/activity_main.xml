@@ -142,6 +142,15 @@
             android:padding="5dp"
             android:text="RecycleView头部刷新"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_slide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#44af8fa0"
+            android:padding="5dp"
+            android:text="侧滑删除、拖动"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 

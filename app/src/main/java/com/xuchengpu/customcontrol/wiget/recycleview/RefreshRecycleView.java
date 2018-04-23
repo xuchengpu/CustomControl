@@ -117,6 +117,16 @@ public class RefreshRecycleView extends WrapRecycleview {
             case MotionEvent.ACTION_DOWN:
                 downY = ev.getY();
                 break;
+
+        }
+
+
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_MOVE:
                 //屏蔽正在刷新时再次进入
                 if (status == CurrentStatus.NORMAL || status == CurrentStatus.PULLING) {
@@ -156,7 +166,7 @@ public class RefreshRecycleView extends WrapRecycleview {
         }
 
 
-        return super.dispatchTouchEvent(ev);
+        return super.onTouchEvent(ev);
     }
 
     /**

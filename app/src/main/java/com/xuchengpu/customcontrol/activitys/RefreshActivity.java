@@ -9,7 +9,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -78,9 +81,9 @@ public class RefreshActivity extends AppCompatActivity {
         //设置中间recycleview的内容
         initFruits();
 
-        GridLayoutManager manager = new GridLayoutManager(this, 2);
-        recyclerView.setLayoutManager(manager);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        GridLayoutManager manager = new GridLayoutManager(this, 2);
+//        recyclerView.setLayoutManager(manager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 //        final int spanCount = manager.getSpanCount();
 //        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
 //            @Override
@@ -127,6 +130,7 @@ public class RefreshActivity extends AppCompatActivity {
         recyclerView.setLoadingHelper(new LoadingHelper() {
             private View view;
             private android.widget.TextView textView;
+
             @Override
             public View getLoadingView(Context context, ViewGroup parent) {
                 view = LayoutInflater.from(context).inflate(R.layout.layout_refresh2, parent, false);
@@ -146,7 +150,7 @@ public class RefreshActivity extends AppCompatActivity {
 
             @Override
             public void stopLoading() {
-              Toast.makeText(RefreshActivity.this, "加载更多完成", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RefreshActivity.this, "加载更多完成", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -169,6 +173,7 @@ public class RefreshActivity extends AppCompatActivity {
                 loadMoreData();
             }
         });
+
 
     }
 
@@ -197,7 +202,8 @@ public class RefreshActivity extends AppCompatActivity {
             }
         }.start();
     }
-    private void loadMoreData(){
+
+    private void loadMoreData() {
         new Thread() {
             @Override
             public void run() {

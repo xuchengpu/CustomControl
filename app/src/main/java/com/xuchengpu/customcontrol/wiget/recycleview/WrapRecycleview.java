@@ -60,7 +60,7 @@ public class WrapRecycleview extends RecyclerView {
             @Override
             public void onItemRangeMoved(int fromPosition, int toPosition, int itemCount) {
                 super.onItemRangeMoved(fromPosition, toPosition, itemCount);
-                mAdapter.notifyItemRangeRemoved(mAdapter.getHeadViewCount()+fromPosition,toPosition);
+                mAdapter.notifyItemMoved(mAdapter.getHeadViewCount()+fromPosition,mAdapter.getHeadViewCount()+toPosition);
             }
         };
     }
