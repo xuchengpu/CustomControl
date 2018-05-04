@@ -41,7 +41,7 @@ public class Imitation58View extends View {
 
         mPaint.setStrokeWidth(borderWidth);
         mPaint.setAntiAlias(true);
-        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStyle(Paint.Style.FILL);
     }
 
     @Override
@@ -56,6 +56,7 @@ public class Imitation58View extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
         switch (shape) {
             case Circle:
                 //画圆
@@ -83,7 +84,7 @@ public class Imitation58View extends View {
         }
     }
 
-     enum Shape {
+    public enum Shape {
         Triangle, Rectangle, Circle;
     }
 
@@ -100,6 +101,9 @@ public class Imitation58View extends View {
                 break;
         }
         invalidate();
+    }
+    public Shape getCurrentShape(){
+        return shape;
     }
 
 }

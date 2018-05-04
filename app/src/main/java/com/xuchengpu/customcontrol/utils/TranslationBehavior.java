@@ -1,6 +1,7 @@
 package com.xuchengpu.customcontrol.utils;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewCompat;
@@ -19,8 +20,22 @@ public class TranslationBehavior extends FloatingActionButton.Behavior {
     private boolean isShow = true;
     private View tabLayout;
 
+    /**
+     * 这个构造器必须要有 ，CoordinatorLayout就是根据这个构造器通过反射来创建实例的
+     * @param context
+     * @param attrs
+     */
     public TranslationBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    /**
+     * 根据CoordinatorLayout源码可知，此方法在TranslationBehavior实例一被创建就会被调用
+     * @param lp
+     */
+    @Override
+    public void onAttachedToLayoutParams(@NonNull CoordinatorLayout.LayoutParams lp) {
+        super.onAttachedToLayoutParams(lp);
     }
 
     /**

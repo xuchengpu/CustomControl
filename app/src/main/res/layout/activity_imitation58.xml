@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.xuchengpu.customcontrol.activitys.Imitation58Activity">
 
-    <com.xuchengpu.customcontrol.wiget.Imitation58View
+    <com.xuchengpu.customcontrol.wiget.LoadView
         android:id="@+id/ita_58"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_height="100dp" />
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

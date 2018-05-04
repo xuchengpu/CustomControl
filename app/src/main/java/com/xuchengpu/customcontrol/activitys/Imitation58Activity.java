@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.xuchengpu.customcontrol.R;
-import com.xuchengpu.customcontrol.wiget.Imitation58View;
+import com.xuchengpu.customcontrol.wiget.LoadView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -13,7 +13,7 @@ import butterknife.InjectView;
 public class Imitation58Activity extends AppCompatActivity {
 
     @InjectView(R.id.ita_58)
-    Imitation58View ita58;
+    LoadView  ita58;
     private ValueAnimator animator;
 
     @Override
@@ -23,25 +23,25 @@ public class Imitation58Activity extends AppCompatActivity {
         ButterKnife.inject(this);
 
 
-        new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                while (true) {
-                    try {
-                        Thread.sleep(800);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            ita58.change();
-                        }
-                    });
-
-                }
-            }
-        }.start();
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                super.run();
+//                while (true) {
+//                    try {
+//                        Thread.sleep(800);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            ita58.change();
+//                        }
+//                    });
+//
+//                }
+//            }
+//        }.start();
     }
 }
