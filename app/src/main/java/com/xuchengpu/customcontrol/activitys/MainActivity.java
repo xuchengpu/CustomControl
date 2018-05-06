@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnRefresh;
     @InjectView(R.id.btn_slide)
     Button btnSlide;
+    @InjectView(R.id.btn_multiple)
+    Button btnMultiple;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_slide,R.id.btn_refresh, R.id.btn_behavior, R.id.btn_status, R.id.btn_draghelper, R.id.btn_kugou, R.id.btn_touch, R.id.btn_flowlayout, R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
+    @OnClick({R.id.btn_multiple,R.id.btn_slide, R.id.btn_refresh, R.id.btn_behavior, R.id.btn_status, R.id.btn_draghelper, R.id.btn_kugou, R.id.btn_touch, R.id.btn_flowlayout, R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -101,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_slide:
                 intent = new Intent(this, SlidingActivity.class);
+                break;
+            case R.id.btn_multiple:
+                intent = new Intent(this, MultipleMenuSelectorActivity.class);
                 break;
         }
         if (intent != null) {

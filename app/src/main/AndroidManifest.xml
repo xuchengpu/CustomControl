@@ -37,9 +37,11 @@
             android:name=".activitys.RefreshActivity"
             android:label="Fruits"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".activitys.SlidingActivity"
+        <activity
+            android:name=".activitys.SlidingActivity"
             android:label="Fruits"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".activitys.MultipleMenuSelectorActivity"></activity>
     </application>
 
 </manifest>
