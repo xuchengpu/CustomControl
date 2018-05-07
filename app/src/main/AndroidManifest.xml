@@ -41,7 +41,8 @@
             android:name=".activitys.SlidingActivity"
             android:label="Fruits"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".activitys.MultipleMenuSelectorActivity"></activity>
+        <activity android:name=".activitys.MultipleMenuSelectorActivity" />
+        <activity android:name=".activitys.CirlceLoadingActivity"></activity>
     </application>
 
 </manifest>

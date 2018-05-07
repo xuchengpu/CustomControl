@@ -53,6 +53,15 @@
             android:text="仿58加载页面"
             android:textAllCaps="false" />
         <Button
+            android:id="@+id/btn_circle_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#44af8fa0"
+            android:padding="5dp"
+            android:text="3个小圆加载效果"
+            android:textAllCaps="false" />
+        <Button
             android:id="@+id/btn_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -4,12 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xuchengpu.customcontrol.activitys.Imitation58Activity">
-
-    <com.xuchengpu.customcontrol.wiget.LoadView58
-        android:id="@+id/ita_58"
-        android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content" />
-
+    tools:context="com.xuchengpu.customcontrol.activitys.CirlceLoadingActivity">
+<com.xuchengpu.customcontrol.wiget.LoadViewCircle
+    android:id="@+id/circle_loadview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
 </RelativeLayout>

@@ -22,7 +22,7 @@ import com.xuchengpu.customcontrol.R;
  * 热爱生活每一天！
  */
 
-public class LoadView extends LinearLayout {
+public class LoadView58 extends LinearLayout {
 
     private Imitation58View shapeView;
     private View loadShadow;
@@ -31,15 +31,15 @@ public class LoadView extends LinearLayout {
     private long animatorDuration = 500;
     private CurrentState state = CurrentState.FALLING;
 
-    public LoadView(Context context) {
+    public LoadView58(Context context) {
         this(context, null);
     }
 
-    public LoadView(Context context, @Nullable AttributeSet attrs) {
+    public LoadView58(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public LoadView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public LoadView58(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView();
     }

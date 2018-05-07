@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.xuchengpu.customcontrol.R;
-import com.xuchengpu.customcontrol.wiget.LoadView;
+import com.xuchengpu.customcontrol.wiget.LoadView58;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -13,7 +13,7 @@ import butterknife.InjectView;
 public class Imitation58Activity extends AppCompatActivity {
 
     @InjectView(R.id.ita_58)
-    LoadView  ita58;
+    LoadView58 ita58;
     private ValueAnimator animator;
 
     @Override
