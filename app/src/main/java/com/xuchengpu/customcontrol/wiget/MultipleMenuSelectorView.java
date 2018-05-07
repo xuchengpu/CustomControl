@@ -14,7 +14,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.xuchengpu.customcontrol.adapter.MultipleBaseAdapter;
+import com.xuchengpu.customcontrol.utils.MultipleBaseAdapter;
+import com.xuchengpu.customcontrol.utils.Observer;
 
 /**
  * Created by 许成谱 on 2018/5/5 13:08.
@@ -35,6 +36,7 @@ public class MultipleMenuSelectorView extends LinearLayout {
     private int currentPosition = -1;//打开菜单的当前位置
     private boolean isAnimatorDoing = false;//动画正在执行
     private MultipleBaseAdapter mAdapter;
+    private AdapterObserver observer;
 
     public MultipleMenuSelectorView(Context context) {
         this(context, null);
@@ -107,7 +109,18 @@ public class MultipleMenuSelectorView extends LinearLayout {
             Log.e("TAG", "多条目筛选适配器为null");
             return;
         }
+        //利用观察者模式 实现跨类方法的调用：在adapter中调用MultipleMenuSelectorView的closeMenu()方法
+        //仿listview源码，如果存在就先解注册，防止重复设置adapter造成混乱
+        if(mAdapter!=null&&observer!=null) {
+            mAdapter.unRegister(observer);
+        }
+
         mAdapter = adapter;
+
+        //重新注册
+        observer = new AdapterObserver();
+        mAdapter.register(observer);
+
         int count = mAdapter.getCount();
         for (int i = 0; i < count; i++) {
             //添加tab导航栏view
@@ -270,5 +283,14 @@ public class MultipleMenuSelectorView extends LinearLayout {
         //更新选中的tab字体颜色大小
         mAdapter.updateSelectedView(tabView, position);
 
+    }
+
+    class AdapterObserver extends Observer {
+
+        @Override
+        public void update() {
+
+            closeMenu();//一旦接收到通知就关闭菜单
+        }
     }
 }

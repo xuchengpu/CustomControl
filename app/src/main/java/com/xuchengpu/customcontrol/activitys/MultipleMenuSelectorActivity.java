@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xuchengpu.customcontrol.R;
-import com.xuchengpu.customcontrol.adapter.MultipleBaseAdapter;
+import com.xuchengpu.customcontrol.utils.MultipleBaseAdapter;
 import com.xuchengpu.customcontrol.wiget.MultipleMenuSelectorView;
 
 import butterknife.ButterKnife;
@@ -50,6 +50,12 @@ public class MultipleMenuSelectorActivity extends AppCompatActivity {
                 RelativeLayout menuView = (RelativeLayout) LayoutInflater.from(MultipleMenuSelectorActivity.this).inflate(R.layout.multiple_menu_view, parent, false);
                 TextView menuContent = menuView.findViewById(R.id.tv_menu_content);
                 menuContent.setText(mItems[position]+"内容");
+                menuView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        sendNotification();//发出通知，关闭菜单
+                    }
+                });
                 return menuView;
             }
 
