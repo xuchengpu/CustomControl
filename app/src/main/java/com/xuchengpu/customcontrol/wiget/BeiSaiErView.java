@@ -59,6 +59,7 @@ public class BeiSaiErView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        //手指还没有触碰的时候不执行下面代码
         if (fixationPoint == null || dragPoint == null) {
             return;
         }
@@ -85,7 +86,7 @@ public class BeiSaiErView extends View {
         Path path = new Path();
         //tana=dy/dx
         int dx = dragPoint.x - fixationPoint.x;
-        if(dx<=0) {
+        if(dx==0) {//防止dy/dx 产生除0的情况崩溃
             return null;
         }
         double a = Math.atan((dragPoint.y - fixationPoint.y) / (dx));
@@ -115,9 +116,9 @@ public class BeiSaiErView extends View {
         //控制点+终点
         Point controlPoint = getControlPoint();
         path.quadTo(controlPoint.x,controlPoint.y,p1.x,p1.y);
-        path.lineTo(p2.x,p2.y);
+        path.lineTo(p2.x,p2.y);//连成直线
         path.quadTo(controlPoint.x,controlPoint.y,p3.x,p3.y);
-        path.close();
+        path.close();//path闭合
         return path;
     }
 
@@ -130,14 +131,17 @@ public class BeiSaiErView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                //手指按下时初始化坐标
                 startX=event.getX();
                 startY=event.getY();
                 initFixationPoint(startX, startY);
+                initDragPoint(startX,startY);
                 break;
             case MotionEvent.ACTION_MOVE:
                 initDragPoint(event.getX(), event.getY());
                 break;
             case MotionEvent.ACTION_UP:
+                //判断距离 产生回弹效果
                 if(fixationRadius > minRadius) {
                     initDragPoint(startX, startY);
                 }
