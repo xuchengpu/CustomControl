@@ -42,7 +42,8 @@
             android:label="Fruits"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".activitys.MultipleMenuSelectorActivity" />
-        <activity android:name=".activitys.CirlceLoadingActivity"></activity>
+        <activity android:name=".activitys.CirlceLoadingActivity" />
+        <activity android:name=".activitys.BaiSaiErActivity"></activity>
     </application>
 
 </manifest>
