@@ -178,7 +178,15 @@
             android:padding="5dp"
             android:text="自定义列表页面"
             android:textAllCaps="false" />
-
+        <Button
+            android:id="@+id/btn_beisaier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#44af8fa0"
+            android:padding="5dp"
+            android:text="贝塞尔曲线"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </ScrollView>

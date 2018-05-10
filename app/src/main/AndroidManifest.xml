@@ -44,6 +44,7 @@
         <activity android:name=".activitys.MultipleMenuSelectorActivity" />
         <activity android:name=".activitys.CirlceLoadingActivity" />
         <activity android:name=".activitys.TableActivity"></activity>
+        <activity android:name=".activitys.BaiSaiErActivity"></activity>
     </application>
 
 </manifest>
