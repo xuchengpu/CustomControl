@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnMultiple;
     @InjectView(R.id.btn_circle_loading)
     Button btnCircleLoading;
+    @InjectView(R.id.btn_table)
+    Button btnTable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_circle_loading, R.id.btn_multiple, R.id.btn_slide, R.id.btn_refresh, R.id.btn_behavior, R.id.btn_status, R.id.btn_draghelper, R.id.btn_kugou, R.id.btn_touch, R.id.btn_flowlayout, R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
+    @OnClick({R.id.btn_table,R.id.btn_circle_loading, R.id.btn_multiple, R.id.btn_slide, R.id.btn_refresh, R.id.btn_behavior, R.id.btn_status, R.id.btn_draghelper, R.id.btn_kugou, R.id.btn_touch, R.id.btn_flowlayout, R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -111,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_multiple:
                 intent = new Intent(this, MultipleMenuSelectorActivity.class);
+                break;
+            case R.id.btn_table:
+                intent = new Intent(this, TableActivity.class);
                 break;
         }
         if (intent != null) {
