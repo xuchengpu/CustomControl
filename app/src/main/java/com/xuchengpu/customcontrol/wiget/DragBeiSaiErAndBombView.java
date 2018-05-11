@@ -1,5 +1,8 @@
 package com.xuchengpu.customcontrol.wiget;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -9,15 +12,20 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
+import com.xuchengpu.customcontrol.activitys.DragViewBombActivity;
 import com.xuchengpu.customcontrol.utils.MyViewOnTouchListener;
 
 /**
  * Created by 许成谱 on 2018/5/9 22:40.
  * qq:1550540124
  * for:热爱生活每一天！
+ * 给任何一个view拖拽添加贝塞尔曲线效果
+ * 使用方式简单明了：DragBeiSaiErAndBombView.attach(View targetview,Context context,BombListener listener);一行代码搞定
  */
 
 public class DragBeiSaiErAndBombView extends View {
@@ -121,7 +129,7 @@ public class DragBeiSaiErAndBombView extends View {
         path.moveTo(p0.x, p0.y);
         //控制点+终点
         Point controlPoint = getControlPoint();
-        path.quadTo(controlPoint.x, controlPoint.y, p1.x, p1.y);
+        path.quadTo(controlPoint.x, controlPoint.y, p1.x, p1.y);//获得贝塞尔曲线的path
         path.lineTo(p2.x, p2.y);//连成直线
         path.quadTo(controlPoint.x, controlPoint.y, p3.x, p3.y);
         path.close();//path闭合
@@ -146,9 +154,9 @@ public class DragBeiSaiErAndBombView extends View {
      *
      * @param view
      */
-    public static void attach(View view, Context context) {
+    public static void attach(View view, Context context,DragViewBombActivity.BombListener listener) {
         DragBeiSaiErAndBombView dragBeiSaiErAndBombView = new DragBeiSaiErAndBombView(context);
-        view.setOnTouchListener(new MyViewOnTouchListener(view, dragBeiSaiErAndBombView, context));
+        view.setOnTouchListener(new MyViewOnTouchListener(view, dragBeiSaiErAndBombView, context,listener));
     }
 
 
@@ -166,17 +174,52 @@ public class DragBeiSaiErAndBombView extends View {
      */
     public void handleActionUp() {
         if (fixationRadius < minRadius) {//超出距离,爆炸效果
-           if(listener!=null) {
-               listener.dismiss(dragPoint);
-           }
+            if (listener != null) {
+                listener.dismiss(dragPoint);
+            }
         } else {//未超出距离，回归原位
             backToOriginPositon();
         }
 
     }
 
+    /**
+     * 回到原位
+     */
     private void backToOriginPositon() {
+        final Point tempPoint=new Point(dragPoint);
+        ValueAnimator animator = ValueAnimator.ofFloat(1, 0);
+        animator.setDuration(200);
+        animator.setInterpolator(new OvershootInterpolator(3f));
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float percent = (float) animation.getAnimatedValue();
+                updateDragPoint(percent,tempPoint);
+            }
+        });
+        animator.start();
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                if (listener != null) {
+                    //通知动画执行完毕
+                    listener.restore();
 
+                }
+            }
+        });
+
+    }
+
+    private void updateDragPoint(float percent, Point tempPoint) {
+        Log.e("TAG", "percent:" + percent);
+        float x = fixationPoint.x + (tempPoint.x - fixationPoint.x) * percent;
+        float y = fixationPoint.y + (tempPoint.y - fixationPoint.y) * percent;
+        initDragPoint(x, y);
+        Log.e("TAG", "x=="+x+"-->y=="+y);
+        invalidate();
     }
 
 
@@ -192,7 +235,7 @@ public class DragBeiSaiErAndBombView extends View {
         /**
          * 消失、爆炸
          */
-        void dismiss(Point point );
+        void dismiss(Point point);
     }
 
     private ViewListener listener;
