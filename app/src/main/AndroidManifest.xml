@@ -43,8 +43,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".activitys.MultipleMenuSelectorActivity" />
         <activity android:name=".activitys.CirlceLoadingActivity" />
-        <activity android:name=".activitys.TableActivity"></activity>
-        <activity android:name=".activitys.BaiSaiErActivity"></activity>
+        <activity android:name=".activitys.TableActivity" />
+        <activity android:name=".activitys.BaiSaiErActivity" />
+        <activity android:name=".activitys.DragViewBombActivity"></activity>
     </application>
 
 </manifest>
