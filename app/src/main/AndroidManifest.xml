@@ -45,7 +45,8 @@
         <activity android:name=".activitys.CirlceLoadingActivity" />
         <activity android:name=".activitys.TableActivity" />
         <activity android:name=".activitys.BaiSaiErActivity" />
-        <activity android:name=".activitys.DragViewBombActivity"></activity>
+        <activity android:name=".activitys.DragViewBombActivity" />
+        <activity android:name=".activitys.LikeActivity"></activity>
     </application>
 
 </manifest>

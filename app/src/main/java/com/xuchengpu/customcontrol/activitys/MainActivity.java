@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnBeisaier;
     @InjectView(R.id.btn_bomb)
     Button btnBomb;
+    @InjectView(R.id.btn_like)
+    Button btnLike;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_bomb,R.id.btn_beisaier, R.id.btn_table, R.id.btn_circle_loading, R.id.btn_multiple, R.id.btn_slide, R.id.btn_refresh, R.id.btn_behavior, R.id.btn_status, R.id.btn_draghelper, R.id.btn_kugou, R.id.btn_touch, R.id.btn_flowlayout, R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
+    @OnClick({R.id.btn_like,R.id.btn_bomb,R.id.btn_beisaier, R.id.btn_table, R.id.btn_circle_loading, R.id.btn_multiple, R.id.btn_slide, R.id.btn_refresh, R.id.btn_behavior, R.id.btn_status, R.id.btn_draghelper, R.id.btn_kugou, R.id.btn_touch, R.id.btn_flowlayout, R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate})
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -126,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_bomb:
                 intent = new Intent(this, DragViewBombActivity.class);
+                break;
+            case R.id.btn_like:
+                intent = new Intent(this, LikeActivity.class);
                 break;
         }
         if (intent != null) {

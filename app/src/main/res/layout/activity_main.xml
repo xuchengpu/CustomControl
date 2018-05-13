@@ -196,6 +196,15 @@
             android:padding="5dp"
             android:text="拖拽爆炸效果"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#44af8fa0"
+            android:padding="5dp"
+            android:text="心形点赞效果"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </ScrollView>
