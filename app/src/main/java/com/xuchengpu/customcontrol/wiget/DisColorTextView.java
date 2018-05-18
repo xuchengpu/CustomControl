@@ -79,7 +79,7 @@ public class DisColorTextView extends android.support.v7.widget.AppCompatTextVie
 
 
     private void drawText(Canvas canvas,String text,Paint paint,float start,float end) {
-        canvas.save();
+        canvas.save();//save方法用于临时保存画布坐标系统的状态
         canvas.clipRect(start,0,end,getHeight());
         Rect boounds=new Rect();
         paint.getTextBounds(text,0,text.length(),boounds);
@@ -89,7 +89,9 @@ public class DisColorTextView extends android.support.v7.widget.AppCompatTextVie
         float dy = (fontMetrics.bottom - fontMetrics.top) / 2 - fontMetrics.bottom;
         float baseLine=getHeight()/2+dy;
         canvas.drawText(text,x,baseLine,paint);
-        canvas.restore();
+        canvas.restore();//restore方法可以用来恢复save之后设置的状态,
+        //可以简单理解为调用restore之后，restore方法前调用的rotate/translate/scale方法全部就还原了，画布的坐标系统恢复到save方法之前，但是这里要注意的是，
+        // restore方法的调用只影响restore之后绘制的内容，对restore之前已经绘制到屏幕上的图形不会产生任何影响。
     }
     public void setProgress(float progress){
         this.progress=progress;

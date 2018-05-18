@@ -12,7 +12,6 @@ import android.support.v4.view.LayoutInflaterFactory;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.VectorEnabledTintResources;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +92,7 @@ public class ParallaxFragment extends Fragment implements LayoutInflaterFactory 
             }
             // 自定义属性怎么存? 还要一一绑定  在View上面设置一个tag
             view.setTag(R.id.parallax_tag, tag);
-            Log.e("TAG", tag.toString());
+//            Log.e("TAG", tag.toString());
             views.add(view);//添加到集合中
         }
     }
