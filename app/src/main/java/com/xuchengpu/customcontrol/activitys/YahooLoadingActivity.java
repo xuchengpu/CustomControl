@@ -6,31 +6,27 @@ import android.view.View;
 import android.widget.Button;
 
 import com.xuchengpu.customcontrol.R;
-import com.xuchengpu.customcontrol.wiget.ParallaxViewpager;
 import com.xuchengpu.customcontrol.wiget.YahooLoadingView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class ParallaxActivity extends AppCompatActivity {
+public class YahooLoadingActivity extends AppCompatActivity {
 
-    @InjectView(R.id.pl_viewpager)
-    ParallaxViewpager plViewpager;
     @InjectView(R.id.yahoo_view)
     YahooLoadingView yahooView;
     @InjectView(R.id.btn_begin)
     Button btnBegin;
     @InjectView(R.id.btn_stop)
     Button btnStop;
-    private int layouts[] = new int[]{R.layout.fragment_page_first, R.layout.fragment_page_second, R.layout.fragment_page_third};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parallax);
+        setContentView(R.layout.activity_yahoo_loading);
         ButterKnife.inject(this);
-        plViewpager.setData(getSupportFragmentManager(), layouts);//封装的思想，方便调用者调用，具体的繁琐工作交给ParallaxViewpager内部去完成
+
     }
 
     @OnClick({R.id.btn_begin, R.id.btn_stop})

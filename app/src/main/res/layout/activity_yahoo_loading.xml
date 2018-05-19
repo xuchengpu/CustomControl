@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xuchengpu.customcontrol.activitys.ParallaxActivity">
-
-    <com.xuchengpu.customcontrol.wiget.ParallaxViewpager
-        android:id="@+id/pl_viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/holo_orange_dark" />
+    android:background="@color/VCheck_blue"
+    tools:context="com.xuchengpu.customcontrol.activitys.YahooLoadingActivity">
 
     <com.xuchengpu.customcontrol.wiget.YahooLoadingView
         android:id="@+id/yahoo_view"
@@ -29,4 +24,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:text="加载完成" />
+
 </RelativeLayout>

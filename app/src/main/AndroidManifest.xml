@@ -47,7 +47,11 @@
         <activity android:name=".activitys.BaiSaiErActivity" />
         <activity android:name=".activitys.DragViewBombActivity" />
         <activity android:name=".activitys.LikeActivity" />
-        <activity android:name=".activitys.ParallaxActivity"></activity>
+        <activity android:name=".activitys.ParallaxActivity"
+            android:hardwareAccelerated="false"/>
+        <activity
+            android:name=".activitys.YahooLoadingActivity"
+            android:hardwareAccelerated="false"/>
     </application>
 
 </manifest>
