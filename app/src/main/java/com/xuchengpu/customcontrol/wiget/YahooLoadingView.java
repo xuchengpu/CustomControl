@@ -2,7 +2,6 @@ package com.xuchengpu.customcontrol.wiget;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
@@ -83,7 +82,6 @@ public class YahooLoadingView extends RelativeLayout {
     }
 
     private int dp2px(float dp) {
-        ValueAnimator animator = ObjectAnimator.ofFloat();
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
     }
 
