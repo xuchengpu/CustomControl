@@ -116,7 +116,6 @@ public class KuGouView extends HorizontalScrollView {
     }
 
     private int getScreenWidth() {//获取屏幕的参数
-
         WindowManager manager = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         manager.getDefaultDisplay().getMetrics(displayMetrics);
@@ -205,12 +204,14 @@ public class KuGouView extends HorizontalScrollView {
         float leftAlpha = 0.5f + (1 - scale) * 0.5f;
         // 缩放 0.7f - 1.0f
         float leftScale = 0.7f + (1 - scale) * 0.3f;
-        menuView.setScaleY(leftScale);
-        menuView.setScaleX(leftScale);
+//        menuView.setScaleY(leftScale);
+//        menuView.setScaleX(leftScale);
 
         menuView.setAlpha(leftAlpha);//设置透明度
 
-        menuView.setTranslationX((float) (l * 0.2));//设置抽屉式效果，平移view
+        menuView.setTranslationX((float) (l*0.2 ));
+//        menuView.setTranslationX((float) (l ));//设置抽屉式效果，平移view
+//        menuView.setTranslationX((float) (-l ));//设置抽屉式效果，平移view
 //        Log.e("TAG", "l=="+l);
 
         //添加仿qq6.0侧滑菜单阴影渐变效果

@@ -59,18 +59,18 @@ public class FlowlayoutActivity extends AppCompatActivity {
     private void initData() {
         datas = new ArrayList<>();
         datas.add("aaaa");
-        datas.add("aaaaaaaaaa");
+        datas.add("你好");
         datas.add("aaaaa");
         datas.add("aa");
         datas.add("aaaaaaaaaaaaa");
-        datas.add("aaaaaaa");
+        datas.add("酸辣粉就拉上");
         datas.add("aaaaaaaaaaa");
-        datas.add("a");
+        datas.add("就");
         datas.add("aaaa");
         datas.add("aaaaaaaaaa");
         datas.add("aaaaa");
         datas.add("aa");
-        datas.add("aaaaaaaaaaaaa");
+        datas.add("了使肌肤了的时间里");
         datas.add("aaaaaaa");
         datas.add("aaaaaaaaaaa");
         datas.add("a");

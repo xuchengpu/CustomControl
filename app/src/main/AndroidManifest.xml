@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activitys.CircleShadowActivity"></activity>
+        <activity android:name=".activitys.ConstraintActivity" />
         <activity android:name=".activitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,11 +49,14 @@
         <activity android:name=".activitys.BaiSaiErActivity" />
         <activity android:name=".activitys.DragViewBombActivity" />
         <activity android:name=".activitys.LikeActivity" />
-        <activity android:name=".activitys.ParallaxActivity"
-            android:hardwareAccelerated="false"/>
+        <activity
+            android:name=".activitys.ParallaxActivity"
+            android:hardwareAccelerated="false" />
         <activity
             android:name=".activitys.YahooLoadingActivity"
-            android:hardwareAccelerated="false"/>
+            android:hardwareAccelerated="false" />
+        <activity android:name=".activitys.ParallayActivity" />
+        <activity android:name=".activitys.MatrixActivity" />
     </application>
 
 </manifest>

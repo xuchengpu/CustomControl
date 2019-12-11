@@ -52,7 +52,6 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseAdapter.Vi
         if(muitiTypeSupport!=null) {
             layoutId=viewType;
         }
-
         return new ViewHolder(inflater.inflate(layoutId, parent, false));
     }
 

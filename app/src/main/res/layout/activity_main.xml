@@ -223,6 +223,42 @@
             android:padding="5dp"
             android:text="仿雅虎加载动画"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_parallay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#44af8fa0"
+            android:padding="5dp"
+            android:text="普通视差动画"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_matrix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#44af8fa0"
+            android:padding="5dp"
+            android:text="Matrix"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_constraint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#44af8fa0"
+            android:padding="5dp"
+            android:text="约束布局"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#44af8fa0"
+            android:padding="5dp"
+            android:text="圆形阴影图像"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </ScrollView>

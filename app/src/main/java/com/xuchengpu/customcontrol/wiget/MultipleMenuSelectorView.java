@@ -109,7 +109,7 @@ public class MultipleMenuSelectorView extends LinearLayout {
             Log.e("TAG", "多条目筛选适配器为null");
             return;
         }
-        //利用观察者模式 实现跨类方法的调用：在adapter中调用MultipleMenuSelectorView的closeMenu()方法
+        //利用观察者模式 实现跨类私有方法的调用：在adapter中调用MultipleMenuSelectorView的closeMenu()方法
         //仿listview源码，如果存在就先解注册，防止重复设置adapter造成混乱
         if(mAdapter!=null&&observer!=null) {
             mAdapter.unRegister(observer);

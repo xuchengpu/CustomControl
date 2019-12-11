@@ -50,6 +50,11 @@ public class StatusBarUtils {
 
         }
     }
+
+    /**
+     * 沉浸式状态栏
+     * @param activity
+     */
     public static void setStatusBarTranslucent(Activity activity){
         //5.0以上 用系统提供好的方法
         if(Build.VERSION.SDK_INT>Build.VERSION_CODES.LOLLIPOP) {
@@ -58,7 +63,6 @@ public class StatusBarUtils {
             activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
 
         }
-        //4.4-5.0 先弄成全屏，然后在头部添加一个同样大小的布局
         else if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT) {
 
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);//让状态栏变成透明，此时电量等图标显示皆保留

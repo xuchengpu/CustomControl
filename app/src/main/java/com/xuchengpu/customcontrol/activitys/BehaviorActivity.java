@@ -17,9 +17,9 @@ import android.widget.Toast;
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.adapter.BaseAdapter;
 import com.xuchengpu.customcontrol.adapter.FruitAdapter;
-import com.xuchengpu.customcontrol.wiget.recycleview.WrapRecycleViewAdapter;
 import com.xuchengpu.customcontrol.bean.Fruit;
 import com.xuchengpu.customcontrol.utils.RecycleViewDecoration;
+import com.xuchengpu.customcontrol.wiget.recycleview.WrapRecycleViewAdapter;
 import com.xuchengpu.customcontrol.wiget.recycleview.WrapRecycleview;
 
 import java.util.ArrayList;
