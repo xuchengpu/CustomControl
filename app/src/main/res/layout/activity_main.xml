@@ -6,259 +6,300 @@
     android:layout_height="match_parent"
     tools:context="com.xuchengpu.customcontrol.activitys.MainActivity">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btn_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="自定义TextView"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="仿qq计步器"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="仿今日头条指示器"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_imitation58"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="仿58加载页面"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_circle_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="3个小圆加载效果"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="5星评分页面"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="字母索引页面"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_sudoku"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="九宫格页面"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_flowlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="自定义流式布局"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_touch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="Touchshi事件分发"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_kugou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="仿酷狗侧滑菜单"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_draghelper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="汽车之家折叠菜单"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="设置沉浸式状态栏"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_behavior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="自定义behavior"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="RecycleView头部刷新"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_slide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="侧滑删除、拖动"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_multiple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="多菜单栏目筛选"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="自定义列表页面"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_beisaier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="贝塞尔曲线"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_bomb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="拖拽爆炸效果"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="心形点赞效果"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_parallax_viewpager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="viewpager中添加视差动画"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_yahoo_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="仿雅虎加载动画"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_parallay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="普通视差动画"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_matrix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="Matrix"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_constraint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="约束布局"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#44af8fa0"
+                android:padding="5dp"
+                android:text="圆形阴影图像"
+                android:textAllCaps="false" />
+        </LinearLayout>
 
         <Button
-            android:id="@+id/btn_textview"
+            android:id="@+id/btn_nest_scroll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="自定义TextView"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_step"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="仿qq计步器"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="仿今日头条指示器"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_imitation58"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="仿58加载页面"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_circle_loading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="3个小圆加载效果"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_rate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="5星评分页面"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_index"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="字母索引页面"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_sudoku"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="九宫格页面"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_flowlayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="自定义流式布局"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_touch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="Touchshi事件分发"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_kugou"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="仿酷狗侧滑菜单"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_draghelper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="汽车之家折叠菜单"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="设置沉浸式状态栏"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_behavior"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="自定义behavior"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="RecycleView头部刷新"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_slide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="侧滑删除、拖动"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_multiple"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="多菜单栏目筛选"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_table"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="自定义列表页面"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_beisaier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="贝塞尔曲线"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_bomb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="拖拽爆炸效果"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_like"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="心形点赞效果"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_parallax_viewpager"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="viewpager中添加视差动画"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_yahoo_loading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="仿雅虎加载动画"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_parallay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="普通视差动画"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_matrix"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="Matrix"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_constraint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="约束布局"
-            android:textAllCaps="false" />
-        <Button
-            android:id="@+id/btn_circle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#44af8fa0"
-            android:padding="5dp"
-            android:text="圆形阴影图像"
-            android:textAllCaps="false" />
-    </LinearLayout>
-
+            android:text="nest_scroll"
+            android:textAllCaps="false"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 </ScrollView>
