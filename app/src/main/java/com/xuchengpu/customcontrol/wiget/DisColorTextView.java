@@ -6,9 +6,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.xuchengpu.customcontrol.R;
 
@@ -18,7 +20,7 @@ import com.xuchengpu.customcontrol.R;
  * 热爱生活每一天！
  */
 
-public class DisColorTextView extends android.support.v7.widget.AppCompatTextView {
+public class DisColorTextView extends AppCompatTextView {
     private int originColor;
     private int changeColor=Color.RED;
 

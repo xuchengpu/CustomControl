@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -12,6 +11,8 @@ import android.view.ViewGroup;
 import android.view.animation.AnticipateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.RelativeLayout;
+
+import androidx.core.content.ContextCompat;
 
 import com.xuchengpu.customcontrol.R;
 

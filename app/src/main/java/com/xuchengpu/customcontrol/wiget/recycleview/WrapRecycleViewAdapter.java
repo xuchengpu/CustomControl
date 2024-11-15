@@ -1,10 +1,11 @@
 package com.xuchengpu.customcontrol.wiget.recycleview;
 
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by 许成谱 on 2018/4/17 10:22.

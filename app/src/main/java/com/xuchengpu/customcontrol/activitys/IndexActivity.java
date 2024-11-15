@@ -2,29 +2,30 @@ package com.xuchengpu.customcontrol.activitys;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.wiget.IndexView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class IndexActivity extends AppCompatActivity {
 
-    @InjectView(R.id.textview)
+    @BindView(R.id.textview)
     TextView textview;
-    @InjectView(R.id.index_view)
+    @BindView(R.id.index_view)
     IndexView indexView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         indexView.setOnPositonListener(new IndexView.OnPositonListener() {
             @Override

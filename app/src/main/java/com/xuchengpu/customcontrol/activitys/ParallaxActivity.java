@@ -1,27 +1,28 @@
 package com.xuchengpu.customcontrol.activitys;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.wiget.ParallaxViewpager;
 import com.xuchengpu.customcontrol.wiget.YahooLoadingView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class ParallaxActivity extends AppCompatActivity {
 
-    @InjectView(R.id.pl_viewpager)
+    @BindView(R.id.pl_viewpager)
     ParallaxViewpager plViewpager;
-    @InjectView(R.id.yahoo_view)
+    @BindView(R.id.yahoo_view)
     YahooLoadingView yahooView;
-    @InjectView(R.id.btn_begin)
+    @BindView(R.id.btn_begin)
     Button btnBegin;
-    @InjectView(R.id.btn_stop)
+    @BindView(R.id.btn_stop)
     Button btnStop;
     private int layouts[] = new int[]{R.layout.fragment_page_first, R.layout.fragment_page_second, R.layout.fragment_page_third};
 
@@ -29,7 +30,7 @@ public class ParallaxActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parallax);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         plViewpager.setData(getSupportFragmentManager(), layouts);//封装的思想，方便调用者调用，具体的繁琐工作交给ParallaxViewpager内部去完成
     }
 

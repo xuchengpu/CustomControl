@@ -1,7 +1,6 @@
 package com.xuchengpu.customcontrol.activitys;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,17 +8,19 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.xuchengpu.customcontrol.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class ViewDragHelperActivity extends AppCompatActivity {
 
-    @InjectView(R.id.listview)
+    @BindView(R.id.listview)
     ListView listview;
     private List<String> datas = new ArrayList<>();
 
@@ -27,7 +28,7 @@ public class ViewDragHelperActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_drag_helper);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         for (int i = 0; i < 30; i++) {
             datas.add("item-->" + i);

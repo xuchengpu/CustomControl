@@ -1,17 +1,18 @@
 package com.xuchengpu.customcontrol.wiget;
 
+import static com.xuchengpu.customcontrol.wiget.Imitation58View.Shape.Circle;
+import static com.xuchengpu.customcontrol.wiget.Imitation58View.Shape.Rectangle;
+import static com.xuchengpu.customcontrol.wiget.Imitation58View.Shape.Triangle;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import static com.xuchengpu.customcontrol.wiget.Imitation58View.Shape.Circle;
-import static com.xuchengpu.customcontrol.wiget.Imitation58View.Shape.Rectangle;
-import static com.xuchengpu.customcontrol.wiget.Imitation58View.Shape.Triangle;
+import androidx.annotation.Nullable;
 
 /**
  * Created by 许成谱 on 2018/3/26 18:44.

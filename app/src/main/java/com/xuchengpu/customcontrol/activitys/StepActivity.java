@@ -3,30 +3,31 @@ package com.xuchengpu.customcontrol.activitys;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.wiget.CircleProgressBar;
 import com.xuchengpu.customcontrol.wiget.StepView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class StepActivity extends AppCompatActivity {
 
 
-    @InjectView(R.id.step_view)
+    @BindView(R.id.step_view)
     StepView stepView;
-    @InjectView(R.id.reset)
+    @BindView(R.id.reset)
     Button reset;
-    @InjectView(R.id.reset_2)
+    @BindView(R.id.reset_2)
     Button reset2;
-    @InjectView(R.id.circle_progressbar)
+    @BindView(R.id.circle_progressbar)
     CircleProgressBar circleProgressbar;
     private ValueAnimator animator;
 
@@ -34,7 +35,7 @@ public class StepActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         stepView.setMaxStep(5000);
         circleProgressbar.setMaxValue(4000);
         resetAnimator();

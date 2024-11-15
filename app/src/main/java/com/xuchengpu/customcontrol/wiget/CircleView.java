@@ -3,9 +3,10 @@ package com.xuchengpu.customcontrol.wiget;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 /**
  * Created by 许成谱 on 2018/5/7 16:40.

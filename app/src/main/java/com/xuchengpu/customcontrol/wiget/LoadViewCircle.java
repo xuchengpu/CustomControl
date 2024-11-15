@@ -6,10 +6,11 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.RelativeLayout;
+
+import androidx.core.content.ContextCompat;
 
 import com.xuchengpu.customcontrol.R;
 

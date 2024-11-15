@@ -2,11 +2,12 @@ package com.xuchengpu.customcontrol.wiget.recycleview;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import androidx.annotation.Nullable;
 
 import com.xuchengpu.customcontrol.R;
 

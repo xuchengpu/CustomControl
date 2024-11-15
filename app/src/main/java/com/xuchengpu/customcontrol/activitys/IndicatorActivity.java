@@ -4,17 +4,18 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.base.BaseFragment;
@@ -24,20 +25,20 @@ import com.xuchengpu.customcontrol.wiget.DisColorTextView;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class IndicatorActivity extends AppCompatActivity {
 
-    @InjectView(R.id.ll_indicator)
+    @BindView(R.id.ll_indicator)
     LinearLayout llIndicator;
-    @InjectView(R.id.viewpager)
+    @BindView(R.id.viewpager)
     ViewPager viewpager;
-    @InjectView(R.id.dc_tv)
+    @BindView(R.id.dc_tv)
     DisColorTextView dcTv;
-    @InjectView(R.id.btn_left_to_right)
+    @BindView(R.id.btn_left_to_right)
     Button btnLeftToRight;
-    @InjectView(R.id.btn_right_to_left)
+    @BindView(R.id.btn_right_to_left)
     Button btnRightToLeft;
     private String[] titles = {"直播", "推荐", "视频", "图片", "段子", "精华"};
     private ArrayList<DisColorTextView> indicators = new ArrayList<>();
@@ -47,7 +48,7 @@ public class IndicatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_indicator);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         initData();
         initViewPager();

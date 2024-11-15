@@ -1,29 +1,30 @@
 package com.xuchengpu.customcontrol.activitys;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.utils.StatusBarUtils;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class StatusBarActivity extends AppCompatActivity {
 
-    @InjectView(R.id.btn_change)
+    @BindView(R.id.btn_change)
     Button btnChange;
-    @InjectView(R.id.btn_immersion)
+    @BindView(R.id.btn_immersion)
     Button btnImmersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status_bar);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
 //        StatusBarUtils.setStatusBarColor(this, Color.GREEN);// 以后使用时注意：此处有bug,只能在oncreate方法里面调用，在onclick里面调用会出问题
         StatusBarUtils.setStatusBarTranslucent(this);//以后使用时注意：此处有bug,只能在oncreate方法里面调用，在onclick里面调用会出问题

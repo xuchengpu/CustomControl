@@ -2,24 +2,25 @@ package com.xuchengpu.customcontrol.activitys;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.utils.MultipleBaseAdapter;
 import com.xuchengpu.customcontrol.wiget.MultipleMenuSelectorView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class MultipleMenuSelectorActivity extends AppCompatActivity {
 
-    @InjectView(R.id.multiple_view)
+    @BindView(R.id.multiple_view)
     MultipleMenuSelectorView multipleView;
     private String[] mItems = {"类型", "品牌", "价格", "更多"};
 
@@ -27,7 +28,7 @@ public class MultipleMenuSelectorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multiple_menu_selector);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         initView();
     }
 

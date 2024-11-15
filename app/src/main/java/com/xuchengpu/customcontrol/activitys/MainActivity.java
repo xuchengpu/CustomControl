@@ -2,80 +2,83 @@ package com.xuchengpu.customcontrol.activitys;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.xuchengpu.customcontrol.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    @InjectView(R.id.btn_textview)
+    @BindView(R.id.btn_textview)
     Button btnTextview;
-    @InjectView(R.id.btn_step)
+    @BindView(R.id.btn_step)
     Button btnStep;
-    @InjectView(R.id.btn_indicator)
+    @BindView(R.id.btn_indicator)
     Button btnIndicator;
-    @InjectView(R.id.btn_imitation58)
+    @BindView(R.id.btn_imitation58)
     Button btnImitation58;
-    @InjectView(R.id.btn_rate)
+    @BindView(R.id.btn_rate)
     Button btnRate;
-    @InjectView(R.id.btn_index)
+    @BindView(R.id.btn_index)
     Button btnIndex;
-    @InjectView(R.id.btn_sudoku)
+    @BindView(R.id.btn_sudoku)
     Button btnSudoku;
-    @InjectView(R.id.btn_flowlayout)
+    @BindView(R.id.btn_flowlayout)
     Button btnFlowlayout;
-    @InjectView(R.id.btn_touch)
+    @BindView(R.id.btn_touch)
     Button btnTouch;
-    @InjectView(R.id.btn_kugou)
+    @BindView(R.id.btn_kugou)
     Button btnKugou;
-    @InjectView(R.id.btn_draghelper)
+    @BindView(R.id.btn_draghelper)
     Button btnDraghelper;
-    @InjectView(R.id.btn_status)
+    @BindView(R.id.btn_status)
     Button btnStatus;
-    @InjectView(R.id.btn_behavior)
+    @BindView(R.id.btn_behavior)
     Button btnBehavior;
-    @InjectView(R.id.btn_refresh)
+    @BindView(R.id.btn_refresh)
     Button btnRefresh;
-    @InjectView(R.id.btn_slide)
+    @BindView(R.id.btn_slide)
     Button btnSlide;
-    @InjectView(R.id.btn_multiple)
+    @BindView(R.id.btn_multiple)
     Button btnMultiple;
-    @InjectView(R.id.btn_circle_loading)
+    @BindView(R.id.btn_circle_loading)
     Button btnCircleLoading;
-    @InjectView(R.id.btn_table)
+    @BindView(R.id.btn_table)
     Button btnTable;
-    @InjectView(R.id.btn_beisaier)
+    @BindView(R.id.btn_beisaier)
     Button btnBeisaier;
-    @InjectView(R.id.btn_bomb)
+    @BindView(R.id.btn_bomb)
     Button btnBomb;
-    @InjectView(R.id.btn_like)
+    @BindView(R.id.btn_like)
     Button btnLike;
-    @InjectView(R.id.btn_parallax_viewpager)
+    @BindView(R.id.btn_parallax_viewpager)
     Button btnParallaxViewpager;
-    @InjectView(R.id.btn_yahoo_loading)
+    @BindView(R.id.btn_yahoo_loading)
     Button btnYahooLoading;
-    @InjectView(R.id.btn_parallay)
+    @BindView(R.id.btn_parallay)
     Button btnParallay;
-    @InjectView(R.id.btn_matrix)
+    @BindView(R.id.btn_matrix)
     Button btnMatrix;
-    @InjectView(R.id.btn_constraint)
+    @BindView(R.id.btn_constraint)
     Button btnConstraint;
-    @InjectView(R.id.btn_circle)
+    @BindView(R.id.btn_circle)
     Button btnCircle;
-    @InjectView(R.id.btn_nest_scroll)
+    @BindView(R.id.btn_nest_scroll)
     Button btnNestScroll;
+    @BindView(R.id.btn_nofication)
+    Button btnNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
 
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn_like, R.id.btn_bomb, R.id.btn_beisaier, R.id.btn_table, R.id.btn_circle_loading, R.id.btn_multiple, R.id.btn_slide,
             R.id.btn_refresh, R.id.btn_behavior, R.id.btn_status, R.id.btn_draghelper, R.id.btn_kugou, R.id.btn_touch, R.id.btn_flowlayout,
             R.id.btn_sudoku, R.id.btn_index, R.id.btn_textview, R.id.btn_step, R.id.btn_indicator, R.id.btn_imitation58, R.id.btn_rate,
-    R.id.btn_nest_scroll})
+    R.id.btn_nest_scroll,R.id.btn_nofication})
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -171,9 +174,16 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_nest_scroll:
                 intent = new Intent(this, NestScrollActivity.class);
                 break;
+            case R.id.btn_nofication:
+                createNotification();
+                break;
         }
         if (intent != null) {
             startActivity(intent);
         }
+    }
+
+    private void createNotification() {
+
     }
 }

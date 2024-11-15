@@ -10,12 +10,13 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
+
+import androidx.annotation.Nullable;
 
 import com.xuchengpu.customcontrol.activitys.DragViewBombActivity;
 import com.xuchengpu.customcontrol.utils.MyViewOnTouchListener;

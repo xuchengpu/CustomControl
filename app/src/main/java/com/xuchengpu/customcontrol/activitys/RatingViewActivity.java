@@ -1,7 +1,8 @@
 package com.xuchengpu.customcontrol.activitys;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.xuchengpu.customcontrol.R;
 

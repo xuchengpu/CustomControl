@@ -1,11 +1,12 @@
 package com.xuchengpu.customcontrol.wiget;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 /**
  * Created by 许成谱 on 2018/4/6 18:31.

@@ -4,10 +4,11 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.ColorInt;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+
+import androidx.annotation.ColorInt;
 
 /**
  * Created by 许成谱 on 2018/4/11 15:59.

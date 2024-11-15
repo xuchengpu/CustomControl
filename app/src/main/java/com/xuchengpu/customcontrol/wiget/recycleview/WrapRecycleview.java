@@ -1,10 +1,11 @@
 package com.xuchengpu.customcontrol.wiget.recycleview;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by 许成谱 on 2018/4/17 14:34.

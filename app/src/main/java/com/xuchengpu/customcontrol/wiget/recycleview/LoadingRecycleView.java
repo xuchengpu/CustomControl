@@ -2,14 +2,15 @@ package com.xuchengpu.customcontrol.wiget.recycleview;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
 
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.utils.LoadingHelper;

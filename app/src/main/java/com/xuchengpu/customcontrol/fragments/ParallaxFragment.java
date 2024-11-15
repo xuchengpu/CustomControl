@@ -5,17 +5,18 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v4.view.LayoutInflaterFactory;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.VectorEnabledTintResources;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.VectorEnabledTintResources;
+import androidx.core.view.LayoutInflaterCompat;
+import androidx.core.view.LayoutInflaterFactory;
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
 
 import com.xuchengpu.customcontrol.R;
 import com.xuchengpu.customcontrol.utils.AppCompatViewInflater;

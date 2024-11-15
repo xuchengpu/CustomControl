@@ -3,7 +3,6 @@ package com.xuchengpu.customcontrol.fragments;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import com.xuchengpu.customcontrol.base.BaseFragment;
 
 /**
- * A simple {@link Fragment} subclass.
  */
 public class ItemFragment extends BaseFragment {
 

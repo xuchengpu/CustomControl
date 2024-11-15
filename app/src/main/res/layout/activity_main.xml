@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.xuchengpu.customcontrol.activitys.MainActivity">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
@@ -301,5 +301,13 @@
             android:textAllCaps="false"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_nofication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="notification"
+            android:textAllCaps="false"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_nest_scroll" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

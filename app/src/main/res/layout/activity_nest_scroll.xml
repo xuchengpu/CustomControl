@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -11,7 +11,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_height="200dp">
-        <com.xuchengpu.customcontrol.wiget.nestscroll.NestedChildView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="80dp"
             android:background="#034400"
             android:layout_height="80dp"/>
@@ -19,4 +19,4 @@
     </com.xuchengpu.customcontrol.wiget.nestscroll.NestedParentView>
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
